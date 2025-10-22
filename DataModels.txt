@@ -1,0 +1,349 @@
+entity-relationship-diagram
+
+// ============================================
+// USER MANAGEMENT
+// ============================================
+
+users [icon: user, color: blue] {
+  id uuid pk
+  email string unique
+  phone string unique
+  password_hash string
+  first_name string
+  last_name string
+  profile_picture_url string
+  user_type string
+  location_lat decimal
+  location_lng decimal
+  is_verified boolean
+  is_active boolean
+  created_at timestamp
+  updated_at timestamp
+}
+
+user_vehicles [icon: car, color: blue] {
+  id uuid pk
+  user_id uuid fk
+  vehicle_type string
+  vehicle_size string
+  registration_number string
+  make string
+  model string
+  is_electric boolean
+  is_default boolean
+  created_at timestamp
+}
+
+user_payment_methods [icon: credit-card, color: blue] {
+  id uuid pk
+  user_id uuid fk
+  payment_type string
+  provider string
+  provider_payment_method_id string
+  card_last4 string
+  card_brand string
+  is_default boolean
+  created_at timestamp
+}
+
+// ============================================
+// OWNER & PROPERTY MANAGEMENT
+// ============================================
+
+owners [icon: building, color: purple] {
+  id uuid pk
+  user_id uuid fk
+  owner_type string
+  business_name string
+  payout_bank_account string
+  payout_method string
+  total_earnings decimal
+  average_rating decimal
+  is_verified boolean
+  created_at timestamp
+}
+
+properties [icon: map-pin, color: purple] {
+  id uuid pk
+  owner_id uuid fk
+  property_name string
+  address string
+  city string
+  state string
+  postal_code string
+  location_lat decimal
+  location_lng decimal
+  access_instructions text
+  property_images json
+  is_active boolean
+  created_at timestamp
+}
+
+parking_spaces [icon: square, color: purple] {
+  id uuid pk
+  property_id uuid fk
+  owner_id uuid fk
+  space_number string
+  space_type string
+  length_meters decimal
+  width_meters decimal
+  height_meters decimal
+  allowed_vehicle_types json
+  space_description text
+  space_images json
+  price_per_hour decimal
+  price_per_day decimal
+  price_per_month decimal
+  booking_mode string
+  has_ev_charging boolean
+  is_available boolean
+  average_rating decimal
+  created_at timestamp
+}
+
+space_availability [icon: calendar, color: purple] {
+  id uuid pk
+  space_id uuid fk
+  day_of_week integer
+  available_from time
+  available_to time
+  is_available boolean
+}
+
+// ============================================
+// BOOKING MANAGEMENT
+// ============================================
+
+bookings [icon: calendar-check, color: green] {
+  id uuid pk
+  booking_number string unique
+  user_id uuid fk
+  owner_id uuid fk
+  space_id uuid fk
+  vehicle_id uuid fk
+  start_time timestamp
+  end_time timestamp
+  duration_hours decimal
+  base_price decimal
+  discount_amount decimal
+  total_amount decimal
+  currency string
+  status string
+  payment_status string
+  check_in_time timestamp
+  check_out_time timestamp
+  cancellation_reason text
+  created_at timestamp
+  updated_at timestamp
+}
+
+// ============================================
+// PAYMENT MANAGEMENT
+// ============================================
+
+payments [icon: dollar-sign, color: orange] {
+  id uuid pk
+  payment_number string unique
+  user_id uuid fk
+  booking_id uuid fk
+  amount decimal
+  currency string
+  payment_method string
+  payment_provider string
+  provider_transaction_id string
+  payment_status string
+  paid_at timestamp
+  created_at timestamp
+}
+
+refunds [icon: rotate-ccw, color: orange] {
+  id uuid pk
+  payment_id uuid fk
+  booking_id uuid fk
+  refund_amount decimal
+  refund_reason string
+  status string
+  processed_at timestamp
+  created_at timestamp
+}
+
+// ============================================
+// REVIEWS & RATINGS
+// ============================================
+
+reviews [icon: star, color: yellow] {
+  id uuid pk
+  booking_id uuid fk
+  user_id uuid fk
+  space_id uuid fk
+  owner_id uuid fk
+  rating integer
+  review_text text
+  review_images json
+  owner_response text
+  owner_responded_at timestamp
+  created_at timestamp
+}
+
+// ============================================
+// COMMUNICATION
+// ============================================
+
+conversations [icon: message-square, color: teal] {
+  id uuid pk
+  user_id uuid fk
+  owner_id uuid fk
+  booking_id uuid fk
+  last_message_at timestamp
+  created_at timestamp
+}
+
+messages [icon: message-circle, color: teal] {
+  id uuid pk
+  conversation_id uuid fk
+  sender_id uuid fk
+  sender_type string
+  message_text text
+  message_attachments json
+  is_read boolean
+  created_at timestamp
+}
+
+notifications [icon: bell, color: teal] {
+  id uuid pk
+  user_id uuid fk
+  notification_type string
+  title string
+  message text
+  reference_id uuid
+  is_read boolean
+  created_at timestamp
+}
+
+// ============================================
+// PROMOTIONS
+// ============================================
+
+promo_codes [icon: tag, color: red] {
+  id uuid pk
+  code string unique
+  promo_type string
+  discount_value decimal
+  max_discount_amount decimal
+  valid_from timestamp
+  valid_to timestamp
+  usage_limit_total integer
+  usage_count integer
+  is_active boolean
+  created_at timestamp
+}
+
+promo_code_usage [icon: check-circle, color: red] {
+  id uuid pk
+  promo_code_id uuid fk
+  user_id uuid fk
+  booking_id uuid fk
+  discount_applied decimal
+  created_at timestamp
+}
+
+// ============================================
+// SUPPORT
+// ============================================
+
+support_tickets [icon: help-circle, color: gray] {
+  id uuid pk
+  ticket_number string unique
+  user_id uuid fk
+  owner_id uuid fk
+  booking_id uuid fk
+  category string
+  subject string
+  description text
+  status string
+  resolved_at timestamp
+  created_at timestamp
+}
+
+ticket_messages [icon: message-square, color: gray] {
+  id uuid pk
+  ticket_id uuid fk
+  sender_id uuid fk
+  message_text text
+  attachments json
+  created_at timestamp
+}
+
+// ============================================
+// ADMIN
+// ============================================
+
+admins [icon: shield, color: black] {
+  id uuid pk
+  user_id uuid fk
+  admin_role string
+  is_active boolean
+  created_at timestamp
+}
+
+platform_settings [icon: settings, color: black] {
+  id uuid pk
+  setting_key string unique
+  setting_value json
+  description text
+  updated_at timestamp
+}
+
+// ============================================
+// RELATIONSHIPS
+// ============================================
+
+// User relationships
+user_vehicles.user_id > users.id
+user_payment_methods.user_id > users.id
+
+// Owner relationships
+owners.user_id > users.id
+properties.owner_id > owners.id
+parking_spaces.property_id > properties.id
+parking_spaces.owner_id > owners.id
+space_availability.space_id > parking_spaces.id
+
+// Booking relationships
+bookings.user_id > users.id
+bookings.owner_id > owners.id
+bookings.space_id > parking_spaces.id
+bookings.vehicle_id > user_vehicles.id
+
+// Payment relationships
+payments.user_id > users.id
+payments.booking_id > bookings.id
+refunds.payment_id > payments.id
+refunds.booking_id > bookings.id
+
+// Review relationships
+reviews.booking_id > bookings.id
+reviews.user_id > users.id
+reviews.space_id > parking_spaces.id
+reviews.owner_id > owners.id
+
+// Communication relationships
+conversations.user_id > users.id
+conversations.owner_id > owners.id
+conversations.booking_id > bookings.id
+messages.conversation_id > conversations.id
+notifications.user_id > users.id
+
+// Promotion relationships
+promo_code_usage.promo_code_id > promo_codes.id
+promo_code_usage.user_id > users.id
+promo_code_usage.booking_id > bookings.id
+
+// Support relationships
+support_tickets.user_id > users.id
+support_tickets.owner_id > owners.id
+support_tickets.booking_id > bookings.id
+ticket_messages.ticket_id > support_tickets.id
+
+// Admin relationships
+admins.user_id > users.id

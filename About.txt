@@ -1,0 +1,1045 @@
+# ParkBNB – Software Description and Implementation Overview
+
+## 1) Overview
+
+**ParkBNB** is a smart parking marketplace platform designed to bridge the gap between vehicle owners seeking parking and property owners offering available parking spaces. The system enables users to discover, book, and manage parking slots seamlessly through an intuitive web interface. It supports individual users, property owners, and administrators, each with distinct roles and access levels.
+
+The platform is built to offer convenience, security, and efficiency in parking management. It provides real-time availability, secure payment integration, and rich communication channels between users and owners, ensuring a transparent and hassle-free experience. ParkBNB also aims to scale toward IoT and AI-based enhancements for smart city integration.
+
+---
+
+## 2) Core Objectives
+
+* **Simplify Parking Discovery:** Allow users to locate available parking slots using map-based search and filters such as price, time, vehicle type, and EV charging options.
+* **Enable Seamless Bookings:** Facilitate instant reservations with options for hourly, daily, weekly, or monthly durations.
+* **Empower Space Owners:** Provide an easy way for property owners to monetize unused parking spaces and manage bookings, pricing, and earnings.
+* **Ensure Transparency:** Incorporate reviews, ratings, and owner verification mechanisms.
+* **Enhance Trust & Security:** Include KYC verification, secure payment gateways, and robust user management.
+* **Support Administration:** Allow system administrators to manage listings, users, payments, and overall platform operations.
+
+---
+
+## 3) User Roles and Functionalities
+
+### 3.1. User (Driver)
+
+The user is the primary consumer who searches and books parking spaces.
+
+* Account creation and login via email, phone, or social login.
+* Manage personal details, vehicles, and payment methods.
+* Discover and book nearby parking spaces using map-based search.
+* Receive booking confirmations, notifications, and receipts.
+* Communicate with space owners through in-app messaging.
+* Provide feedback and ratings after each booking.
+
+### 3.2. Parking Space Owner
+
+The owner manages parking listings and earns revenue through space rentals.
+
+* Register as an owner with KYC verification.
+* Add properties and multiple parking spaces with dimensions and photos.
+* Set availability, pricing models (hourly/daily/monthly), and space details.
+* Monitor bookings, revenue, and occupancy analytics.
+* Receive notifications for new bookings, payments, or user messages.
+
+Different owner types (individual, residential, commercial, industrial, or land-based) will have customized dashboards and insights.
+
+### 3.3. Administrator
+
+Administrators oversee the platform’s health and compliance.
+
+* Approve, verify, or deactivate user and owner accounts.
+* Manage property listings and bookings.
+* Handle payment processing, refunds, and commission configurations.
+* Monitor analytics for usage, revenue, and occupancy trends.
+* Send platform-wide notifications and manage support tickets.
+
+---
+
+## 4) Key Functional Modules
+
+### 4.1. Authentication & Profiles
+
+* Registration and login via multiple channels.
+* Profile management for both users and owners.
+* Optional KYC verification for trust and access to premium features.
+
+### 4.2. Parking Space Management
+
+* Property owners can add, modify, or deactivate listings.
+* Define space details such as dimensions, vehicle type compatibility, and access instructions.
+* Manage availability schedules and occupancy tracking.
+
+### 4.3. Search & Discovery
+
+* Map-based discovery with Google Maps integration.
+* Filter options for time, price, EV charging, and security features.
+* Nearby recommendations and intelligent search suggestions.
+
+### 4.4. Booking & Payment System
+
+* Real-time booking confirmation and instant slot availability.
+* Flexible payment options (UPI, cards, wallets).
+* Refund and cancellation processes.
+* Transaction tracking and digital receipts.
+
+### 4.5. Communication & Notifications
+
+* In-app messaging between users and owners.
+* Automated notifications for bookings, payments, and cancellations.
+* Alerts for nearby offers and reminders for active bookings.
+
+### 4.6. Reviews & Ratings
+
+* Feedback collection post-booking.
+* Ratings for both parking experience and owner service quality.
+
+### 4.7. Admin Management
+
+* User, owner, and property verification workflows.
+* Control over commission rates and financial reporting.
+* Analytics dashboard for demand forecasting and fraud detection.
+
+---
+
+## 5) System Behavior and Workflow
+
+1. **User Journey:** The user signs up, adds vehicle information, searches for parking spaces, and completes a booking through integrated payment. Notifications and receipts are provided instantly.
+2. **Owner Journey:** The owner registers, verifies identity, lists parking spaces, and manages bookings. Earnings and performance analytics are available in real-time.
+3. **Admin Journey:** The admin monitors all transactions, manages system integrity, and oversees dispute handling, ensuring compliance and smooth operation.
+
+---
+
+## 6) Platform Features Summary
+
+| Category                        | Description                                                                   |
+| ------------------------------- | ----------------------------------------------------------------------------- |
+| **Account Management**          | Registration, login, verification, and profile handling for users and owners. |
+| **Property & Space Management** | Add, edit, and manage parking listings and space availability.                |
+| **Search & Discovery**          | Map-based search with filters and geolocation-based suggestions.              |
+| **Booking Engine**              | Real-time slot booking, modification, and cancellation.                       |
+| **Payments & Refunds**          | Integrated secure payments, refund handling, and receipts.                    |
+| **Communication**               | In-app chat between users and owners for clarity and coordination.            |
+| **Notifications**               | Push alerts for booking status, reminders, and offers.                        |
+| **Reviews & Ratings**           | Feedback mechanism for users and owners.                                      |
+| **Analytics & Insights**        | Revenue tracking, occupancy analytics, and demand forecasting.                |
+| **Admin Tools**                 | Platform management, financial controls, and dispute resolution.              |
+
+---
+
+## 7) MVP Scope
+
+For the Minimum Viable Product, focus on the essential workflows:
+
+* User authentication and profile management.
+* Owner onboarding and space listing.
+* Search and discovery with basic filters.
+* Booking and secure payment processing.
+* Basic admin controls for user and listing management.
+
+These core features ensure the platform provides immediate usability, measurable value, and a foundation for future enhancements.
+
+---
+
+## 8) Future Enhancements
+
+* **EV Charging Integration:** Add charging slot detection and booking.
+* **IoT Access Control:** Enable automatic entry and exit for vehicles.
+* **AI-based Pricing:** Suggest dynamic pricing based on demand patterns.
+* **Corporate & Fleet Management:** Bulk booking and company accounts.
+* **Smart City Integration:** Collaborate with local municipalities for public parking data.
+
+---
+
+## 9) Business Value
+
+* **For Users:** Time-saving, reliable, and transparent parking options.
+* **For Owners:** Passive income generation through digital listing and automation.
+* **For Platform:** Scalable revenue model via commissions, premium subscriptions, and advertisements.
+
+---
+
+## 10) Vision
+
+ParkBNB aspires to evolve into an integrated smart mobility platform that contributes to reducing congestion, optimizing parking utilization, and enhancing urban living through intelligent infrastructure.
+
+Smart Parking Marketplace App - Requirements Analysis
+ 
+1. User Requirements
+1.1 Account & Profile
+•	Sign up/login via email, phone, or Google/Apple.
+•	Manage vehicle details and payment methods.
+•	KYC and vehicle verification (optional for premium users).
+1.2 Search & Discovery
+•	Map-based search with Google Maps integration.
+•	Filters: price, time, vehicle type, EV charging, and security.
+•	Vehicle size compatibility filter.
+•	Smart recommendations and nearby alerts.
+1.3 Booking & Payments
+•	Real-time availability and instant booking.
+•	Hourly, daily, weekly, or monthly slot options.
+•	Secure payments via UPI, cards, or wallet.
+•	Extend or modify ongoing bookings.
+•	Refund and cancellation policy.
+1.4 Parking Space Details
+•	Display dimensions (length, width, height clearance).
+•	Indicate compatible vehicle types.
+•	Show photos and entry/access instructions.
+1.5 Notifications & Communication
+•	Push notifications for booking updates.
+•	In-app chat/call with owners.
+1.6 Reviews & Ratings
+•	Rate parking experience.
+•	View owner feedback.
+1.7 Premium Features
+•	Subscription passes for frequent users.
+•	Auto-booking recurring slots.
+•	EV charging slot reservation.
+ 
+2. Parking Space Owner Requirements
+2.1 Owner Types
+•	Individual Owners
+•	Residential/Community Owners
+•	Commercial Owners
+•	Industrial Owners
+•	Empty Land Owners
+2.2 Common Features
+•	Owner registration with KYC verification.
+•	Add and manage multiple spaces.
+•	Enter parking dimensions and allowed vehicle types.
+•	Set pricing (hourly/daily/monthly).
+•	Upload photos and access details.
+•	View earnings and transaction history.
+•	Receive booking and payment alerts.
+2.3 Owner-Type-Specific Dashboards
+Individual Owners - Simple single-space dashboard. - Basic earnings summary. - Manual booking confirmation.
+Residential/Community Owners - Multi-slot management. - Resident verification. - Shared revenue overview.
+Commercial Owners - Occupancy analytics and demand tracking. - Dynamic pricing tools. - Multi-property management.
+Industrial Owners - Large vehicle/truck slot management. - Fleet or bulk booking support. - Size-based pricing tiers.
+Empty Land Owners - Temporary/event-based parking setup. - Quick activation/deactivation of spaces.
+2.4 Analytics & Insights
+•	Occupancy and revenue performance tracking.
+•	Utilization reports by vehicle type.
+2.5 Premium Features
+•	Dynamic pricing automation.
+•	Smart access and EV system integration.
+•	Loyalty rewards.
+ 
+3. Admin Requirements
+3.1 User & Owner Management
+•	Approve, verify, or deactivate accounts.
+•	Handle disputes and refunds.
+•	Blacklist fraudulent users.
+3.2 Listings & Bookings
+•	Approve/reject listings.
+•	Ensure dimension and vehicle compatibility data.
+•	Monitor real-time bookings.
+3.3 Payments & Commissions
+•	Configure platform commission rates.
+•	Manage payouts and refunds.
+•	Generate financial reports.
+3.4 Dashboard & Analytics
+•	Track users, revenue, and occupancy.
+•	Fraud detection.
+•	Demand forecasting.
+3.5 Communication & Support
+•	Bulk notifications.
+•	User support ticket system.
+3.6 System Configuration
+•	Manage integrations (payment, maps, IoT).
+•	Update pricing and platform rules.
+ 
+4. Technical Requirements
+4.1 Integrations
+•	Google Maps / Mapbox API.
+•	Razorpay / Stripe / PayPal Payment Gateway.
+•	IoT integration for smart access control.
+4.2 Technology Stack
+•	Frontend: React.js (web), React Native (mobile).
+•	Backend: Node.js (Express), Firebase / AWS.
+•	Database: MongoDB / PostgreSQL.
+ 
+5. MVP Requirements
+•	User registration and login.
+•	Owner onboarding with owner-type selection.
+•	Space listing with dimensions and allowed vehicles.
+•	Map-based search and booking.
+•	Payment processing.
+•	Basic admin dashboard.
+ 
+6. Future Enhancements
+•	Owner-type-specific analytics dashboards.
+•	EV charging integration.
+•	IoT access control.
+•	AI-based pricing and demand forecasting.
+•	Corporate fleet parking solutions.
+•	Smart city integration for public parking data.
+
+Parking Management System - Complete API Endpoints Reference
+Table of Contents
+1. User Management
+2. User Vehicles
+3. User Payment Methods
+4. Owner Management
+5. Properties
+6. Parking Spaces
+7. Space Availability
+8. Bookings
+9. Payments
+10. Refunds
+11. Reviews
+12. Conversations
+13. Messages
+14. Notifications
+15. Promo Codes
+16. Support Tickets
+17. Admins
+18. Platform Settings
+________________________________________________________________________________
+User Management
+GET Endpoints
+GET /api/users
+• Description: Get all users with pagination
+• Query Params: page, limit, user_type, is_verified, is_active
+• Returns: List of users
+GET /api/users/{user_id}
+• Description: Get user by ID
+• Path Params: user_id (UUID)
+• Returns: Single user object
+GET /api/users/email/{email}
+• Description: Get user by email
+• Path Params: email (string)
+• Returns: Single user object
+GET /api/users/phone/{phone}
+• Description: Get user by phone
+• Path Params: phone (string)
+• Returns: Single user object
+GET /api/users/{user_id}/profile
+• Description: Get complete user profile
+• Path Params: user_id (UUID)
+• Returns: User with related data (vehicles, payment methods, bookings)
+POST Endpoints
+POST /api/users
+• Description: Create new user
+• Body: email, phone, password, first_name, last_name, user_type, location_lat,
+location_lng
+• Returns: Created user object
+POST /api/users/register
+• Description: Register new user with authentication
+• Body: email, phone, password, first_name, last_name, user_type
+• Returns: User object with auth token
+POST /api/users/login
+• Description: User login
+• Body: email, password
+• Returns: User object with auth token
+POST /api/users/{user_id}/verify
+• Description: Verify user account
+• Path Params: user_id (UUID)
+• Body: verification_code
+• Returns: Verified user object
+PUT Endpoints
+PUT /api/users/{user_id}
+• Description: Update user information
+• Path Params: user_id (UUID)
+• Body: first_name, last_name, phone, profile_picture_url, location_lat,
+location_lng
+• Returns: Updated user object
+PUT /api/users/{user_id}/password
+• Description: Change user password
+• Path Params: user_id (UUID)
+• Body: old_password, new_password
+• Returns: Success message
+PUT /api/users/{user_id}/location
+• Description: Update user location
+• Path Params: user_id (UUID)
+• Body: location_lat, location_lng
+• Returns: Updated user object
+DELETE Endpoints
+DELETE /api/users/{user_id}
+• Description: Delete user (soft delete)
+• Path Params: user_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+User Vehicles
+GET Endpoints
+GET /api/users/{user_id}/vehicles
+• Description: Get all vehicles for a user
+• Path Params: user_id (UUID)
+• Returns: List of vehicles
+GET /api/vehicles/{vehicle_id}
+• Description: Get vehicle by ID
+• Path Params: vehicle_id (UUID)
+• Returns: Single vehicle object
+POST Endpoints
+POST /api/users/{user_id}/vehicles
+• Description: Create new vehicle for user
+• Path Params: user_id (UUID)
+• Body: vehicle_type, vehicle_size, registration_number, make, model,
+is_electric, is_default
+• Returns: Created vehicle object
+PUT Endpoints
+PUT /api/vehicles/{vehicle_id}
+• Description: Update vehicle information
+• Path Params: vehicle_id (UUID)
+• Body: vehicle_type, vehicle_size, make, model, is_electric
+• Returns: Updated vehicle object
+PUT /api/vehicles/{vehicle_id}/set-default
+• Description: Set vehicle as default
+• Path Params: vehicle_id (UUID)
+• Returns: Updated vehicle object
+DELETE Endpoints
+DELETE /api/vehicles/{vehicle_id}
+• Description: Delete vehicle
+• Path Params: vehicle_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+User Payment Methods
+GET Endpoints
+GET /api/users/{user_id}/payment-methods
+• Description: Get all payment methods for a user
+• Path Params: user_id (UUID)
+• Returns: List of payment methods
+GET /api/payment-methods/{payment_method_id}
+• Description: Get payment method by ID
+• Path Params: payment_method_id (UUID)
+• Returns: Single payment method object
+POST Endpoints
+POST /api/users/{user_id}/payment-methods
+• Description: Add new payment method
+• Path Params: user_id (UUID)
+• Body: payment_type, provider, provider_payment_method_id, card_last4,
+card_brand, is_default
+• Returns: Created payment method object
+PUT Endpoints
+PUT /api/payment-methods/{payment_method_id}
+• Description: Update payment method
+• Path Params: payment_method_id (UUID)
+• Body: is_default
+• Returns: Updated payment method object
+PUT /api/payment-methods/{payment_method_id}/set-default
+• Description: Set payment method as default
+• Path Params: payment_method_id (UUID)
+• Returns: Updated payment method object
+DELETE Endpoints
+DELETE /api/payment-methods/{payment_method_id}
+• Description: Delete payment method
+• Path Params: payment_method_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Owner Management
+GET Endpoints
+GET /api/owners
+• Description: Get all owners with pagination
+• Query Params: page, limit, owner_type, is_verified
+• Returns: List of owners
+GET /api/owners/{owner_id}
+• Description: Get owner by ID
+• Path Params: owner_id (UUID)
+• Returns: Single owner object
+GET /api/users/{user_id}/owner-profile
+• Description: Get owner profile by user ID
+• Path Params: user_id (UUID)
+• Returns: Owner object
+GET /api/owners/{owner_id}/earnings
+• Description: Get owner earnings
+• Path Params: owner_id (UUID)
+• Query Params: start_date, end_date
+• Returns: Earnings data
+GET /api/owners/{owner_id}/statistics
+• Description: Get owner statistics
+• Path Params: owner_id (UUID)
+• Returns: Statistics (bookings, earnings, ratings)
+POST Endpoints
+POST /api/owners
+• Description: Create new owner profile
+• Body: user_id, owner_type, business_name, payout_bank_account, payout_method
+• Returns: Created owner object
+POST /api/owners/{owner_id}/verify
+• Description: Verify owner account
+• Path Params: owner_id (UUID)
+• Body: verification_documents
+• Returns: Verified owner object
+PUT Endpoints
+PUT /api/owners/{owner_id}
+• Description: Update owner information
+• Path Params: owner_id (UUID)
+• Body: business_name, owner_type
+• Returns: Updated owner object
+PUT /api/owners/{owner_id}/payout-info
+• Description: Update payout information
+• Path Params: owner_id (UUID)
+• Body: payout_bank_account, payout_method
+• Returns: Updated owner object
+DELETE Endpoints
+DELETE /api/owners/{owner_id}
+• Description: Delete owner profile
+• Path Params: owner_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Properties
+GET Endpoints
+GET /api/properties
+• Description: Get all properties with pagination
+• Query Params: page, limit, city, state, is_active
+• Returns: List of properties
+GET /api/properties/{property_id}
+• Description: Get property by ID
+• Path Params: property_id (UUID)
+• Returns: Single property object
+GET /api/owners/{owner_id}/properties
+• Description: Get all properties for an owner
+• Path Params: owner_id (UUID)
+• Returns: List of properties
+GET /api/properties/search/nearby
+• Description: Search properties by location
+• Query Params: lat, lng, radius_km
+• Returns: List of nearby properties
+POST Endpoints
+POST /api/properties
+• Description: Create new property
+• Body: owner_id, property_name, address, city, state, postal_code, location_lat,
+location_lng, access_instructions, property_images
+• Returns: Created property object
+PUT Endpoints
+PUT /api/properties/{property_id}
+• Description: Update property information
+• Path Params: property_id (UUID)
+• Body: property_name, address, city, state, postal_code, access_instructions
+• Returns: Updated property object
+PUT /api/properties/{property_id}/images
+• Description: Update property images
+• Path Params: property_id (UUID)
+• Body: property_images
+• Returns: Updated property object
+DELETE Endpoints
+DELETE /api/properties/{property_id}
+• Description: Delete property (soft delete)
+• Path Params: property_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Parking Spaces
+GET Endpoints
+GET /api/parking-spaces
+• Description: Get all parking spaces with pagination
+• Query Params: page, limit, space_type, is_available
+• Returns: List of parking spaces
+GET /api/parking-spaces/{space_id}
+• Description: Get parking space by ID
+• Path Params: space_id (UUID)
+• Returns: Single parking space object
+GET /api/properties/{property_id}/parking-spaces
+• Description: Get all parking spaces for a property
+• Path Params: property_id (UUID)
+• Returns: List of parking spaces
+GET /api/parking-spaces/search
+• Description: Search available parking spaces
+• Query Params: lat, lng, start_time, end_time, vehicle_type, has_ev_charging
+• Returns: List of available parking spaces
+GET /api/parking-spaces/{space_id}/availability
+• Description: Check space availability for time period
+• Path Params: space_id (UUID)
+• Query Params: start_time, end_time
+• Returns: Availability status
+POST Endpoints
+POST /api/parking-spaces
+• Description: Create new parking space
+• Body: property_id, owner_id, space_number, space_type, length_meters,
+width_meters, height_meters, allowed_vehicle_types, space_description,
+space_images, price_per_hour, price_per_day, price_per_month, booking_mode,
+has_ev_charging
+• Returns: Created parking space object
+PUT Endpoints
+PUT /api/parking-spaces/{space_id}
+• Description: Update parking space information
+• Path Params: space_id (UUID)
+• Body: space_description, allowed_vehicle_types, space_images
+• Returns: Updated parking space object
+PUT /api/parking-spaces/{space_id}/pricing
+• Description: Update parking space pricing
+• Path Params: space_id (UUID)
+• Body: price_per_hour, price_per_day, price_per_month
+• Returns: Updated parking space object
+PUT /api/parking-spaces/{space_id}/toggle-availability
+• Description: Toggle space availability
+• Path Params: space_id (UUID)
+• Returns: Updated parking space object
+DELETE Endpoints
+DELETE /api/parking-spaces/{space_id}
+• Description: Delete parking space (soft delete)
+• Path Params: space_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Space Availability
+GET Endpoints
+GET /api/parking-spaces/{space_id}/availability-schedule
+• Description: Get weekly availability schedule
+• Path Params: space_id (UUID)
+• Returns: List of availability schedules
+POST Endpoints
+POST /api/parking-spaces/{space_id}/availability-schedule
+• Description: Create availability schedule
+• Path Params: space_id (UUID)
+• Body: day_of_week, available_from, available_to, is_available
+• Returns: Created availability schedule
+PUT Endpoints
+PUT /api/availability-schedule/{schedule_id}
+• Description: Update availability schedule
+• Path Params: schedule_id (UUID)
+• Body: available_from, available_to, is_available
+• Returns: Updated availability schedule
+DELETE Endpoints
+DELETE /api/availability-schedule/{schedule_id}
+• Description: Delete availability schedule
+• Path Params: schedule_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Bookings
+GET Endpoints
+GET /api/bookings
+• Description: Get all bookings with pagination
+• Query Params: page, limit, status, payment_status
+• Returns: List of bookings
+GET /api/bookings/{booking_id}
+• Description: Get booking by ID
+• Path Params: booking_id (UUID)
+• Returns: Single booking object
+GET /api/bookings/number/{booking_number}
+• Description: Get booking by booking number
+• Path Params: booking_number (string)
+• Returns: Single booking object
+GET /api/users/{user_id}/bookings
+• Description: Get all bookings for a user
+• Path Params: user_id (UUID)
+• Query Params: status
+• Returns: List of user bookings
+GET /api/owners/{owner_id}/bookings
+• Description: Get all bookings for an owner
+• Path Params: owner_id (UUID)
+• Query Params: status
+• Returns: List of owner bookings
+GET /api/parking-spaces/{space_id}/bookings
+• Description: Get all bookings for a parking space
+• Path Params: space_id (UUID)
+• Query Params: status
+• Returns: List of space bookings
+POST Endpoints
+POST /api/bookings
+• Description: Create new booking
+• Body: user_id, space_id, vehicle_id, start_time, end_time, duration_hours,
+base_price, total_amount
+• Returns: Created booking object
+POST /api/bookings/{booking_id}/confirm
+• Description: Confirm booking
+• Path Params: booking_id (UUID)
+• Returns: Confirmed booking object
+POST /api/bookings/{booking_id}/cancel
+• Description: Cancel booking
+• Path Params: booking_id (UUID)
+• Body: cancellation_reason
+• Returns: Cancelled booking object
+POST /api/bookings/{booking_id}/check-in
+• Description: Check in to parking space
+• Path Params: booking_id (UUID)
+• Returns: Updated booking object
+POST /api/bookings/{booking_id}/check-out
+• Description: Check out from parking space
+• Path Params: booking_id (UUID)
+• Returns: Updated booking object
+PUT Endpoints
+PUT /api/bookings/{booking_id}
+• Description: Update booking information
+• Path Params: booking_id (UUID)
+• Body: start_time, end_time, vehicle_id
+• Returns: Updated booking object
+DELETE Endpoints
+DELETE /api/bookings/{booking_id}
+• Description: Delete booking
+• Path Params: booking_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Payments
+GET Endpoints
+GET /api/payments
+• Description: Get all payments with pagination
+• Query Params: page, limit, payment_status
+• Returns: List of payments
+GET /api/payments/{payment_id}
+• Description: Get payment by ID
+• Path Params: payment_id (UUID)
+• Returns: Single payment object
+GET /api/payments/number/{payment_number}
+• Description: Get payment by payment number
+• Path Params: payment_number (string)
+• Returns: Single payment object
+GET /api/bookings/{booking_id}/payment
+• Description: Get payment for a booking
+• Path Params: booking_id (UUID)
+• Returns: Payment object
+GET /api/users/{user_id}/payments
+• Description: Get all payments for a user
+• Path Params: user_id (UUID)
+• Returns: List of user payments
+POST Endpoints
+POST /api/payments
+• Description: Create new payment
+• Body: user_id, booking_id, amount, currency, payment_method, payment_provider
+• Returns: Created payment object
+POST /api/payments/{payment_id}/process
+• Description: Process payment
+• Path Params: payment_id (UUID)
+• Body: provider_transaction_id
+• Returns: Processed payment object
+PUT Endpoints
+PUT /api/payments/{payment_id}
+• Description: Update payment status
+• Path Params: payment_id (UUID)
+• Body: payment_status, provider_transaction_id
+• Returns: Updated payment object
+DELETE Endpoints
+DELETE /api/payments/{payment_id}
+• Description: Delete payment record
+• Path Params: payment_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Refunds
+GET Endpoints
+GET /api/refunds
+• Description: Get all refunds with pagination
+• Query Params: page, limit, status
+• Returns: List of refunds
+GET /api/refunds/{refund_id}
+• Description: Get refund by ID
+• Path Params: refund_id (UUID)
+• Returns: Single refund object
+GET /api/payments/{payment_id}/refund
+• Description: Get refund for a payment
+• Path Params: payment_id (UUID)
+• Returns: Refund object
+GET /api/bookings/{booking_id}/refund
+• Description: Get refund for a booking
+• Path Params: booking_id (UUID)
+• Returns: Refund object
+POST Endpoints
+POST /api/refunds
+• Description: Create new refund
+• Body: payment_id, booking_id, refund_amount, refund_reason
+• Returns: Created refund object
+POST /api/refunds/{refund_id}/process
+• Description: Process refund
+• Path Params: refund_id (UUID)
+• Returns: Processed refund object
+PUT Endpoints
+PUT /api/refunds/{refund_id}
+• Description: Update refund status
+• Path Params: refund_id (UUID)
+• Body: status
+• Returns: Updated refund object
+DELETE Endpoints
+DELETE /api/refunds/{refund_id}
+• Description: Delete refund record
+• Path Params: refund_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Reviews
+GET Endpoints
+GET /api/reviews
+• Description: Get all reviews with pagination
+• Query Params: page, limit, rating
+• Returns: List of reviews
+GET /api/reviews/{review_id}
+• Description: Get review by ID
+• Path Params: review_id (UUID)
+• Returns: Single review object
+GET /api/bookings/{booking_id}/review
+• Description: Get review for a booking
+• Path Params: booking_id (UUID)
+• Returns: Review object
+GET /api/parking-spaces/{space_id}/reviews
+• Description: Get all reviews for a parking space
+• Path Params: space_id (UUID)
+• Returns: List of reviews
+GET /api/owners/{owner_id}/reviews
+• Description: Get all reviews for an owner
+• Path Params: owner_id (UUID)
+• Returns: List of reviews
+POST Endpoints
+POST /api/reviews
+• Description: Create new review
+• Body: booking_id, user_id, space_id, owner_id, rating, review_text,
+review_images
+• Returns: Created review object
+POST /api/reviews/{review_id}/respond
+• Description: Add owner response to review
+• Path Params: review_id (UUID)
+• Body: owner_response
+• Returns: Updated review object
+PUT Endpoints
+PUT /api/reviews/{review_id}
+• Description: Update review
+• Path Params: review_id (UUID)
+• Body: rating, review_text, review_images
+• Returns: Updated review object
+DELETE Endpoints
+DELETE /api/reviews/{review_id}
+• Description: Delete review
+• Path Params: review_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Conversations
+GET Endpoints
+GET /api/conversations
+• Description: Get all conversations with pagination
+• Query Params: page, limit
+• Returns: List of conversations
+GET /api/conversations/{conversation_id}
+• Description: Get conversation by ID
+• Path Params: conversation_id (UUID)
+• Returns: Single conversation object
+GET /api/users/{user_id}/conversations
+• Description: Get all conversations for a user
+• Path Params: user_id (UUID)
+• Returns: List of user conversations
+GET /api/bookings/{booking_id}/conversation
+• Description: Get conversation for a booking
+• Path Params: booking_id (UUID)
+• Returns: Conversation object
+POST Endpoints
+POST /api/conversations
+• Description: Create new conversation
+• Body: user_id, owner_id, booking_id
+• Returns: Created conversation object
+PUT Endpoints
+PUT /api/conversations/{conversation_id}
+• Description: Update conversation
+• Path Params: conversation_id (UUID)
+• Body: last_message_at
+• Returns: Updated conversation object
+DELETE Endpoints
+DELETE /api/conversations/{conversation_id}
+• Description: Delete conversation
+• Path Params: conversation_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Messages
+GET Endpoints
+GET /api/conversations/{conversation_id}/messages
+• Description: Get all messages in a conversation
+• Path Params: conversation_id (UUID)
+• Query Params: page, limit
+• Returns: List of messages
+GET /api/messages/{message_id}
+• Description: Get message by ID
+• Path Params: message_id (UUID)
+• Returns: Single message object
+POST Endpoints
+POST /api/conversations/{conversation_id}/messages
+• Description: Send new message
+• Path Params: conversation_id (UUID)
+• Body: sender_id, sender_type, message_text, message_attachments
+• Returns: Created message object
+PUT Endpoints
+PUT /api/messages/{message_id}/mark-read
+• Description: Mark message as read
+• Path Params: message_id (UUID)
+• Returns: Updated message object
+DELETE Endpoints
+DELETE /api/messages/{message_id}
+• Description: Delete message
+• Path Params: message_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Notifications
+GET Endpoints
+GET /api/notifications
+• Description: Get all notifications with pagination
+• Query Params: page, limit, is_read
+• Returns: List of notifications
+GET /api/notifications/{notification_id}
+• Description: Get notification by ID
+• Path Params: notification_id (UUID)
+• Returns: Single notification object
+GET /api/users/{user_id}/notifications
+• Description: Get all notifications for a user
+• Path Params: user_id (UUID)
+• Query Params: is_read
+• Returns: List of user notifications
+POST Endpoints
+POST /api/notifications
+• Description: Create new notification
+• Body: user_id, notification_type, title, message, reference_id
+• Returns: Created notification object
+PUT Endpoints
+PUT /api/notifications/{notification_id}/mark-read
+• Description: Mark notification as read
+• Path Params: notification_id (UUID)
+• Returns: Updated notification object
+PUT /api/users/{user_id}/notifications/mark-all-read
+• Description: Mark all notifications as read for user
+• Path Params: user_id (UUID)
+• Returns: Success message
+DELETE Endpoints
+DELETE /api/notifications/{notification_id}
+• Description: Delete notification
+• Path Params: notification_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Promo Codes
+GET Endpoints
+GET /api/promo-codes
+• Description: Get all promo codes with pagination
+• Query Params: page, limit, is_active
+• Returns: List of promo codes
+GET /api/promo-codes/{promo_id}
+• Description: Get promo code by ID
+• Path Params: promo_id (UUID)
+• Returns: Single promo code object
+GET /api/promo-codes/code/{code}
+• Description: Get promo code by code string
+• Path Params: code (string)
+• Returns: Single promo code object
+GET /api/promo-codes/{promo_id}/validate
+• Description: Validate promo code
+• Path Params: promo_id (UUID)
+• Returns: Validation status
+GET /api/promo-codes/{promo_id}/usage
+• Description: Get usage records for promo code
+• Path Params: promo_id (UUID)
+• Returns: List of usage records
+POST Endpoints
+POST /api/promo-codes
+• Description: Create new promo code
+• Body: code, promo_type, discount_value, max_discount_amount, valid_from,
+valid_to, usage_limit_total
+• Returns: Created promo code object
+POST /api/promo-codes/{promo_id}/use
+• Description: Use promo code
+• Path Params: promo_id (UUID)
+• Body: user_id, booking_id, discount_applied
+• Returns: Promo code usage record
+PUT Endpoints
+PUT /api/promo-codes/{promo_id}
+• Description: Update promo code
+• Path Params: promo_id (UUID)
+• Body: discount_value, valid_to, usage_limit_total
+• Returns: Updated promo code object
+PUT /api/promo-codes/{promo_id}/deactivate
+• Description: Deactivate promo code
+• Path Params: promo_id (UUID)
+• Returns: Updated promo code object
+DELETE Endpoints
+DELETE /api/promo-codes/{promo_id}
+• Description: Delete promo code
+• Path Params: promo_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Support Tickets
+GET Endpoints
+GET /api/support-tickets
+• Description: Get all support tickets with pagination
+• Query Params: page, limit, status, category
+• Returns: List of support tickets
+GET /api/support-tickets/{ticket_id}
+• Description: Get support ticket by ID
+• Path Params: ticket_id (UUID)
+• Returns: Single support ticket object
+GET /api/support-tickets/number/{ticket_number}
+• Description: Get support ticket by ticket number
+• Path Params: ticket_number (string)
+• Returns: Single support ticket object
+GET /api/users/{user_id}/support-tickets
+• Description: Get all support tickets for a user
+• Path Params: user_id (UUID)
+• Returns: List of user support tickets
+GET /api/support-tickets/{ticket_id}/messages
+• Description: Get all messages for a support ticket
+• Path Params: ticket_id (UUID)
+• Returns: List of ticket messages
+POST Endpoints
+POST /api/support-tickets
+• Description: Create new support ticket
+• Body: user_id, owner_id, booking_id, category, subject, description
+• Returns: Created support ticket object
+POST /api/support-tickets/{ticket_id}/messages
+• Description: Add message to support ticket
+• Path Params: ticket_id (UUID)
+• Body: sender_id, message_text, attachments
+• Returns: Created ticket message object
+POST /api/support-tickets/{ticket_id}/resolve
+• Description: Resolve support ticket
+• Path Params: ticket_id (UUID)
+• Returns: Resolved support ticket object
+POST /api/support-tickets/{ticket_id}/reopen
+• Description: Reopen support ticket
+• Path Params: ticket_id (UUID)
+• Returns: Reopened support ticket object
+PUT Endpoints
+PUT /api/support-tickets/{ticket_id}
+• Description: Update support ticket
+• Path Params: ticket_id (UUID)
+• Body: status, category
+• Returns: Updated support ticket object
+DELETE Endpoints
+DELETE /api/support-tickets/{ticket_id}
+• Description: Delete support ticket
+• Path Params: ticket_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Admins
+GET Endpoints
+GET /api/admins
+• Description: Get all admins
+• Returns: List of admins
+GET /api/admins/{admin_id}
+• Description: Get admin by ID
+• Path Params: admin_id (UUID)
+• Returns: Single admin object
+GET /api/users/{user_id}/admin-profile
+• Description: Get admin profile by user ID
+• Path Params: user_id (UUID)
+• Returns: Admin object
+POST Endpoints
+POST /api/admins
+• Description: Create new admin
+• Body: user_id, admin_role
+• Returns: Created admin object
+PUT Endpoints
+PUT /api/admins/{admin_id}
+• Description: Update admin information
+• Path Params: admin_id (UUID)
+• Body: admin_role, is_active
+• Returns: Updated admin object
+PUT /api/admins/{admin_id}/deactivate
+• Description: Deactivate admin
+• Path Params: admin_id (UUID)
+• Returns: Updated admin object
+DELETE Endpoints
+DELETE /api/admins/{admin_id}
+• Description: Delete admin
+• Path Params: admin_id (UUID)
+• Returns: Success message
+________________________________________________________________________________
+Platform Settings
+GET Endpoints
+GET /api/platform-settings
+• Description: Get all platform settings
+• Returns: List of platform settings
+GET /api/platform-settings/{setting_key}
+• Description: Get platform setting by key
+• Path Params: setting_key (string)
+• Returns: Single platform setting object
+POST Endpoints
+POST /api/platform-settings
+• Description: Create new platform setting
+• Body: setting_key, setting_value, description
+• Returns: Created platform setting object
+PUT Endpoints
+PUT /api/platform-settings/{setting_key}
+• Description: Update platform setting
+• Path Params: setting_key (string)
+• Body: setting_value, description
+• Returns: Updated platform setting object
+DELETE Endpoints
+DELETE /api/platform-settings/{setting_key}
+• Description: Delete platform setting
+• Path Params: setting_key (string)
+• Returns: Success message
